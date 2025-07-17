@@ -86,43 +86,43 @@ export const HistoryPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Your Creative
             <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
               History
             </span>
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Browse and manage all your AI-generated coloring pages
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-8">
           <div className="flex flex-col md:flex-row gap-4 items-center">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
               <input
                 type="text"
                 placeholder="Search your creations..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
               />
             </div>
 
             {/* Filters */}
             <div className="flex items-center space-x-4">
-              <Filter className="w-5 h-5 text-gray-400" />
+              <Filter className="w-5 h-5 text-gray-400 dark:text-gray-500" />
               <select
                 value={selectedFilter}
                 onChange={(e) => setSelectedFilter(e.target.value)}
-                className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                className="px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white transition-all duration-200"
               >
                 <option value="all">All Items</option>
                 <option value="recent">Recent</option>
@@ -137,7 +137,7 @@ export const HistoryPage = () => {
           {filteredItems.map(item => (
             <div
               key={item.id}
-              className="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-coral-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-coral-200 dark:hover:border-coral-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
               <div className="relative">
                 <img
@@ -149,14 +149,14 @@ export const HistoryPage = () => {
                 
                 {/* Quick Actions */}
                 <div className="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:bg-white transition-colors duration-200">
+                  <button className="w-8 h-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200">
                     <Eye className="w-4 h-4" />
                   </button>
-                  <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:bg-white transition-colors duration-200">
+                  <button className="w-8 h-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200">
                     <Download className="w-4 h-4" />
                   </button>
                   <button className={`w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors duration-200 ${
-                    item.liked ? 'text-red-500' : 'text-gray-700 hover:text-red-500'
+                    item.liked ? 'text-red-500' : 'text-gray-700 dark:text-gray-300 hover:text-red-500'
                   }`}>
                     <Heart className={`w-4 h-4 ${item.liked ? 'fill-current' : ''}`} />
                   </button>
@@ -172,30 +172,30 @@ export const HistoryPage = () => {
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                     <Calendar className="w-4 h-4" />
                     <span>{new Date(item.date).toLocaleDateString()}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
                     <Download className="w-4 h-4" />
                     <span>{item.downloads}</span>
                   </div>
                 </div>
 
-                <p className="text-gray-900 font-medium mb-3 line-clamp-2">{item.prompt}</p>
+                <p className="text-gray-900 dark:text-white font-medium mb-3 line-clamp-2">{item.prompt}</p>
 
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-sm text-gray-500 capitalize">Style: {item.style}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400 capitalize">Style: {item.style}</span>
                 </div>
 
                 <div className="flex space-x-2">
-                  <button className="flex-1 py-2 px-4 bg-coral-50 text-coral-700 rounded-lg font-medium hover:bg-coral-100 transition-colors duration-200">
+                  <button className="flex-1 py-2 px-4 bg-coral-50 dark:bg-coral-900/20 text-coral-700 dark:text-coral-300 rounded-lg font-medium hover:bg-coral-100 dark:hover:bg-coral-900/30 transition-colors duration-200">
                     View
                   </button>
-                  <button className="flex-1 py-2 px-4 bg-mint-50 text-mint-700 rounded-lg font-medium hover:bg-mint-100 transition-colors duration-200">
+                  <button className="flex-1 py-2 px-4 bg-mint-50 dark:bg-mint-900/20 text-mint-700 dark:text-mint-300 rounded-lg font-medium hover:bg-mint-100 dark:hover:bg-mint-900/30 transition-colors duration-200">
                     Download
                   </button>
-                  <button className="py-2 px-4 bg-purple-50 text-purple-700 rounded-lg font-medium hover:bg-purple-100 transition-colors duration-200">
+                  <button className="py-2 px-4 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 rounded-lg font-medium hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors duration-200">
                     Recreate
                   </button>
                 </div>
@@ -207,11 +207,11 @@ export const HistoryPage = () => {
         {/* No Results */}
         {filteredItems.length === 0 && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Search className="w-8 h-8 text-gray-400" />
+            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-gray-400 dark:text-gray-500" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No items found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or create your first coloring page</p>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No items found</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">Try adjusting your search or create your first coloring page</p>
             <button
               onClick={() => {
                 setSearchTerm('');
@@ -227,7 +227,7 @@ export const HistoryPage = () => {
         {/* Load More */}
         {filteredItems.length > 0 && (
           <div className="text-center mt-12">
-            <button className="px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            <button className="px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
               Load More
             </button>
           </div>

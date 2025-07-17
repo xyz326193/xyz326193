@@ -105,33 +105,33 @@ export const FAQPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Frequently Asked
             <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
               Questions
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Find answers to common questions about ColorCraft AI. Can't find what you're looking for? Contact our support team.
           </p>
         </div>
 
         {/* Search and Filter */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-8">
           <div className="flex flex-col md:flex-row gap-4">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
               <input
                 type="text"
                 placeholder="Search questions..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
               />
             </div>
 
@@ -160,10 +160,10 @@ export const FAQPage = () => {
           {filteredFAQs.map(faq => (
             <div
               key={faq.id}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200"
+              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-200"
             >
-              <button
-                onClick={() => toggleItem(faq.id)}
+                    ? 'bg-coral-500 text-white shadow-lg'
+                    : 'bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
                 className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-coral-500 focus:ring-inset rounded-2xl"
               >
                 <div className="flex items-center space-x-3">
@@ -182,13 +182,13 @@ export const FAQPage = () => {
                       }`
                     })}
                   </div>
-                  <span className="text-lg font-medium text-gray-900">{faq.question}</span>
+                  <span className="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</span>
                 </div>
                 <div className="flex-shrink-0">
                   {openItems.includes(faq.id) ? (
-                    <Minus className="w-5 h-5 text-gray-400" />
+                    <Minus className="w-5 h-5 text-gray-400 dark:text-gray-500" />
                   ) : (
-                    <Plus className="w-5 h-5 text-gray-400" />
+                    <Plus className="w-5 h-5 text-gray-400 dark:text-gray-500" />
                   )}
                 </div>
               </button>
@@ -196,7 +196,7 @@ export const FAQPage = () => {
               {openItems.includes(faq.id) && (
                 <div className="px-6 pb-4">
                   <div className="pl-11 pr-6">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               )}
@@ -207,11 +207,11 @@ export const FAQPage = () => {
         {/* No Results */}
         {filteredFAQs.length === 0 && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Search className="w-8 h-8 text-gray-400" />
+            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-gray-400 dark:text-gray-500" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No questions found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or browse all categories</p>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No questions found</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">Try adjusting your search or browse all categories</p>
             <button
               onClick={() => {
                 setSearchTerm('');
@@ -225,16 +225,16 @@ export const FAQPage = () => {
         )}
 
         {/* Contact Support */}
-        <div className="mt-12 bg-gradient-to-br from-coral-50 to-purple-50 rounded-2xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Still Need Help?</h3>
-          <p className="text-gray-600 mb-6">
+        <div className="mt-12 bg-gradient-to-br from-coral-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Still Need Help?</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             Can't find the answer you're looking for? Our support team is here to help you get the most out of ColorCraft AI.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-6 py-3 bg-coral-500 text-white rounded-lg font-medium hover:bg-coral-600 transition-colors duration-200">
               Contact Support
             </button>
-            <button className="px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200">
+            <button className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
               Join Community
             </button>
           </div>

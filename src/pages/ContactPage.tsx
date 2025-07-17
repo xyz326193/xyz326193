@@ -52,17 +52,17 @@ export const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get in
             <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
               Touch
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have questions or need help? We're here to support you every step of the way.
           </p>
         </div>
@@ -70,8 +70,8 @@ export const ContactPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4">
@@ -79,9 +79,9 @@ export const ContactPage = () => {
                       <info.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                      <p className="text-coral-600 font-medium">{info.value}</p>
-                      <p className="text-gray-600 text-sm mt-1">{info.description}</p>
+                      <h3 className="font-semibold text-gray-900 dark:text-white">{info.title}</h3>
+                      <p className="text-coral-600 dark:text-coral-400 font-medium">{info.value}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{info.description}</p>
                     </div>
                   </div>
                 ))}
@@ -89,34 +89,34 @@ export const ContactPage = () => {
             </div>
 
             {/* Office Location */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
               <div className="flex items-center space-x-3 mb-4">
                 <MapPin className="w-6 h-6 text-coral-500" />
-                <h3 className="text-xl font-semibold text-gray-900">Our Office</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Our Office</h3>
               </div>
               <div className="space-y-2">
-                <p className="text-gray-900 font-medium">ColorCraft AI Headquarters</p>
-                <p className="text-gray-600">123 Innovation Drive</p>
-                <p className="text-gray-600">Tech Valley, CA 94105</p>
-                <p className="text-gray-600">United States</p>
+                <p className="text-gray-900 dark:text-white font-medium">ColorCraft AI Headquarters</p>
+                <p className="text-gray-600 dark:text-gray-300">123 Innovation Drive</p>
+                <p className="text-gray-600 dark:text-gray-300">Tech Valley, CA 94105</p>
+                <p className="text-gray-600 dark:text-gray-300">United States</p>
               </div>
               
               {/* Map placeholder */}
-              <div className="mt-6 h-32 bg-gray-100 rounded-lg flex items-center justify-center">
-                <p className="text-gray-500">Interactive Map</p>
+              <div className="mt-6 h-32 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                <p className="text-gray-500 dark:text-gray-400">Interactive Map</p>
               </div>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Name *
                     </label>
                     <input
@@ -126,13 +126,13 @@ export const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
                       placeholder="Your full name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email *
                     </label>
                     <input
@@ -142,14 +142,14 @@ export const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                      className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Category
                   </label>
                   <select
@@ -157,7 +157,7 @@ export const ContactPage = () => {
                     name="category"
                     value={formData.category}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white transition-all duration-200"
                   >
                     {categories.map(category => (
                       <option key={category.value} value={category.value}>
@@ -168,7 +168,7 @@ export const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Subject *
                   </label>
                   <input
@@ -178,13 +178,13 @@ export const ContactPage = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
                     placeholder="Brief description of your inquiry"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -194,7 +194,7 @@ export const ContactPage = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 resize-none transition-all duration-200"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
                     placeholder="Please provide details about your inquiry..."
                   />
                 </div>
@@ -212,31 +212,31 @@ export const ContactPage = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Frequently Asked Questions</h2>
+        <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Frequently Asked Questions</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">How do I create a coloring page?</h3>
-                <p className="text-gray-600 text-sm">Simply describe what you want in the prompt box and our AI will generate a beautiful coloring page for you.</p>
+              <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">How do I create a coloring page?</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Simply describe what you want in the prompt box and our AI will generate a beautiful coloring page for you.</p>
               </div>
               
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Can I download high-quality images?</h3>
-                <p className="text-gray-600 text-sm">Yes! All generated images are available in high resolution, perfect for printing.</p>
+              <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Can I download high-quality images?</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Yes! All generated images are available in high resolution, perfect for printing.</p>
               </div>
             </div>
             
             <div className="space-y-4">
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Is there a limit to how many I can create?</h3>
-                <p className="text-gray-600 text-sm">You can create unlimited coloring pages with your account. No restrictions!</p>
+              <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Is there a limit to how many I can create?</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">You can create unlimited coloring pages with your account. No restrictions!</p>
               </div>
               
-              <div className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">How can I save my creations?</h3>
-                <p className="text-gray-600 text-sm">All your generated images are automatically saved in your account history.</p>
+              <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">How can I save my creations?</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">All your generated images are automatically saved in your account history.</p>
               </div>
             </div>
           </div>

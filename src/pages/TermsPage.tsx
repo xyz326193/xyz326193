@@ -56,38 +56,38 @@ export const TermsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-purple-200 rounded-full px-4 py-2 text-sm font-medium text-purple-700 shadow-sm mb-6">
+          <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-purple-200 dark:border-purple-700 rounded-full px-4 py-2 text-sm font-medium text-purple-700 dark:text-purple-300 shadow-sm mb-6">
             <Scale className="w-4 h-4" />
             <span>Legal Terms & Conditions</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Terms of
             <span className="block bg-gradient-to-r from-purple-500 to-coral-500 bg-clip-text text-transparent">
               Service
             </span>
           </h1>
           
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Please read these terms carefully before using ColorCraft AI. By using our service, you agree to these terms.
           </p>
           
-          <div className="mt-6 text-sm text-gray-500">
+          <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
             Last updated: January 15, 2025
           </div>
         </div>
 
         {/* Important Notice */}
-        <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6 mb-8">
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-2xl p-6 mb-8">
           <div className="flex items-start space-x-3">
-            <AlertCircle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="text-lg font-semibold text-yellow-800 mb-2">Important Notice</h3>
-              <p className="text-yellow-700">
+              <h3 className="text-lg font-semibold text-yellow-800 dark:text-yellow-300 mb-2">Important Notice</h3>
+              <p className="text-yellow-700 dark:text-yellow-300">
                 These terms constitute a legally binding agreement between you and ColorCraft AI. Please read them carefully and contact us if you have any questions.
               </p>
             </div>
@@ -95,14 +95,14 @@ export const TermsPage = () => {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Navigation</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Navigation</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {sections.map((section) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="block px-3 py-2 text-sm text-purple-600 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+                className="block px-3 py-2 text-sm text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-lg transition-colors duration-200"
               >
                 {section.title}
               </a>
@@ -111,21 +111,21 @@ export const TermsPage = () => {
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
           {sections.map((section, index) => (
             <div
               key={section.id}
               id={section.id}
-              className={`p-8 ${index < sections.length - 1 ? 'border-b border-gray-200' : ''}`}
+              className={`p-8 ${index < sections.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''}`}
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{section.title}</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{section.title}</h2>
               <div className="prose prose-gray max-w-none">
-                <p className="text-gray-600 leading-relaxed mb-4">{section.content}</p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">{section.content}</p>
                 
                 {section.id === 'acceptable-use' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Prohibited activities include:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Prohibited activities include:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Generating inappropriate, offensive, or harmful content</li>
                       <li>• Violating intellectual property rights of others</li>
                       <li>• Attempting to reverse engineer or hack our systems</li>
@@ -137,8 +137,8 @@ export const TermsPage = () => {
                 
                 {section.id === 'content-ownership' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Content rights:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Content rights:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• You own the coloring pages you generate</li>
                       <li>• You can use them for personal, educational, or commercial purposes</li>
                       <li>• You grant us a license to use your prompts to improve our AI</li>
@@ -149,8 +149,8 @@ export const TermsPage = () => {
                 
                 {section.id === 'user-accounts' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Account responsibilities:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Account responsibilities:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Provide accurate and complete information</li>
                       <li>• Maintain the security of your password</li>
                       <li>• Notify us immediately of any unauthorized use</li>
@@ -161,8 +161,8 @@ export const TermsPage = () => {
                 
                 {section.id === 'disclaimers' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Service disclaimers:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Service disclaimers:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Service availability may vary</li>
                       <li>• AI-generated content may not always meet expectations</li>
                       <li>• We do not guarantee specific results</li>
@@ -173,8 +173,8 @@ export const TermsPage = () => {
                 
                 {section.id === 'termination' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Termination conditions:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Termination conditions:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Violation of these terms</li>
                       <li>• Fraudulent or illegal activity</li>
                       <li>• Abuse of our service or resources</li>
@@ -188,12 +188,12 @@ export const TermsPage = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Questions About These Terms?</h2>
-          <p className="text-gray-600 mb-4">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Questions About These Terms?</h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
             If you have any questions about these Terms of Service, please contact us:
           </p>
-          <div className="space-y-2 text-gray-600">
+          <div className="space-y-2 text-gray-600 dark:text-gray-300">
             <p>Email: legal@colorcraft.ai</p>
             <p>Address: 123 Innovation Drive, Tech Valley, CA 94105</p>
             <p>Phone: +1 (555) 123-4567</p>

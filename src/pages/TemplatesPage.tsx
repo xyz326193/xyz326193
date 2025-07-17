@@ -103,43 +103,43 @@ export const TemplatesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Coloring Book
             <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
               Templates
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Choose from our collection of professionally designed templates or use them as inspiration for your own creations
           </p>
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-8">
           <div className="flex flex-col lg:flex-row gap-4 items-center">
             {/* Search */}
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
               <input
                 type="text"
                 placeholder="Search templates..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
               />
             </div>
 
             {/* Category Filter */}
             <div className="flex items-center space-x-4">
-              <Filter className="w-5 h-5 text-gray-400" />
+              <Filter className="w-5 h-5 text-gray-400 dark:text-gray-500" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 transition-all duration-200"
+                className="px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-coral-500 focus:border-coral-500 text-gray-900 dark:text-white transition-all duration-200"
               >
                 {categories.map(category => (
                   <option key={category.id} value={category.id}>
@@ -150,11 +150,11 @@ export const TemplatesPage = () => {
             </div>
 
             {/* View Mode */}
-            <div className="flex items-center space-x-2 bg-gray-50 rounded-xl p-1">
+            <div className="flex items-center space-x-2 bg-gray-50 dark:bg-gray-700 rounded-xl p-1">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg transition-all duration-200 ${
-                  viewMode === 'grid' ? 'bg-white shadow-sm text-coral-600' : 'text-gray-600 hover:text-coral-600'
+                  viewMode === 'grid' ? 'bg-white dark:bg-gray-600 shadow-sm text-coral-600 dark:text-coral-400' : 'text-gray-600 dark:text-gray-300 hover:text-coral-600 dark:hover:text-coral-400'
                 }`}
               >
                 <Grid className="w-5 h-5" />
@@ -162,7 +162,7 @@ export const TemplatesPage = () => {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-lg transition-all duration-200 ${
-                  viewMode === 'list' ? 'bg-white shadow-sm text-coral-600' : 'text-gray-600 hover:text-coral-600'
+                  viewMode === 'list' ? 'bg-white dark:bg-gray-600 shadow-sm text-coral-600 dark:text-coral-400' : 'text-gray-600 dark:text-gray-300 hover:text-coral-600 dark:hover:text-coral-400'
                 }`}
               >
                 <List className="w-5 h-5" />
@@ -180,7 +180,7 @@ export const TemplatesPage = () => {
           {filteredTemplates.map(template => (
             <div
               key={template.id}
-              className={`group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-coral-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+              className={`group bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-coral-200 dark:hover:border-coral-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
                 viewMode === 'list' ? 'flex' : ''
               }`}
             >
@@ -202,10 +202,10 @@ export const TemplatesPage = () => {
                 
                 {/* Quick Actions */}
                 <div className="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:bg-white transition-colors duration-200">
+                  <button className="w-8 h-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200">
                     <Eye className="w-4 h-4" />
                   </button>
-                  <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:bg-white transition-colors duration-200">
+                  <button className="w-8 h-8 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200">
                     <Download className="w-4 h-4" />
                   </button>
                 </div>
@@ -213,7 +213,7 @@ export const TemplatesPage = () => {
 
               <div className={`p-6 ${viewMode === 'list' ? 'flex-1' : ''}`}>
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-coral-600 transition-colors duration-200">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-coral-600 dark:group-hover:text-coral-400 transition-colors duration-200">
                     {template.title}
                   </h3>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${getComplexityColor(template.complexity)}`}>
@@ -221,10 +221,10 @@ export const TemplatesPage = () => {
                   </span>
                 </div>
 
-                <p className="text-gray-600 mb-4">{template.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{template.description}</p>
 
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-4 text-sm text-gray-500">
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
                     <div className="flex items-center space-x-1">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                       <span>{template.rating}</span>
@@ -244,7 +244,7 @@ export const TemplatesPage = () => {
                   >
                     Use Template
                   </SmartLink>
-                  <button className="py-2 px-4 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200">
+                  <button className="py-2 px-4 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200">
                     Preview
                   </button>
                 </div>
@@ -256,11 +256,11 @@ export const TemplatesPage = () => {
         {/* No Results */}
         {filteredTemplates.length === 0 && (
           <div className="text-center py-12">
-            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Search className="w-8 h-8 text-gray-400" />
+            <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Search className="w-8 h-8 text-gray-400 dark:text-gray-500" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No templates found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">No templates found</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">Try adjusting your search or filter criteria</p>
             <button
               onClick={() => {
                 setSearchTerm('');

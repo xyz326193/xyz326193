@@ -46,67 +46,67 @@ export const PrivacyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-coral-200 rounded-full px-4 py-2 text-sm font-medium text-coral-700 shadow-sm mb-6">
+          <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-coral-200 dark:border-coral-700 rounded-full px-4 py-2 text-sm font-medium text-coral-700 dark:text-coral-300 shadow-sm mb-6">
             <Shield className="w-4 h-4" />
             <span>Your Privacy Matters</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Privacy
             <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
               Policy
             </span>
           </h1>
           
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We're committed to protecting your privacy and being transparent about how we handle your data.
           </p>
           
-          <div className="mt-6 text-sm text-gray-500">
+          <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
             Last updated: January 15, 2025
           </div>
         </div>
 
         {/* Key Points */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
             <div className="w-12 h-12 bg-gradient-to-br from-coral-500 to-purple-500 rounded-xl flex items-center justify-center mb-4">
               <Lock className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Data Security</h3>
-            <p className="text-gray-600 text-sm">Your personal information is encrypted and securely stored using industry-standard security measures.</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data Security</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-sm">Your personal information is encrypted and securely stored using industry-standard security measures.</p>
           </div>
           
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
             <div className="w-12 h-12 bg-gradient-to-br from-mint-500 to-coral-500 rounded-xl flex items-center justify-center mb-4">
               <Eye className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Transparency</h3>
-            <p className="text-gray-600 text-sm">We're clear about what data we collect, how we use it, and who we share it with.</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Transparency</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-sm">We're clear about what data we collect, how we use it, and who we share it with.</p>
           </div>
           
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
             <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-coral-500 rounded-xl flex items-center justify-center mb-4">
               <UserCheck className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Your Control</h3>
-            <p className="text-gray-600 text-sm">You have full control over your data, including the ability to access, update, or delete it.</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Your Control</h3>
+            <p className="text-gray-600 dark:text-gray-300 text-sm">You have full control over your data, including the ability to access, update, or delete it.</p>
           </div>
         </div>
 
         {/* Navigation */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Navigation</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm mb-8">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Navigation</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {sections.map((section) => (
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="block px-3 py-2 text-sm text-coral-600 hover:text-coral-700 hover:bg-coral-50 rounded-lg transition-colors duration-200"
+                className="block px-3 py-2 text-sm text-coral-600 dark:text-coral-400 hover:text-coral-700 dark:hover:text-coral-300 hover:bg-coral-50 dark:hover:bg-coral-900/20 rounded-lg transition-colors duration-200"
               >
                 {section.title}
               </a>
@@ -115,21 +115,21 @@ export const PrivacyPage = () => {
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm">
           {sections.map((section, index) => (
             <div
               key={section.id}
               id={section.id}
-              className={`p-8 ${index < sections.length - 1 ? 'border-b border-gray-200' : ''}`}
+              className={`p-8 ${index < sections.length - 1 ? 'border-b border-gray-200 dark:border-gray-700' : ''}`}
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{section.title}</h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{section.title}</h2>
               <div className="prose prose-gray max-w-none">
-                <p className="text-gray-600 leading-relaxed mb-4">{section.content}</p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">{section.content}</p>
                 
                 {section.id === 'information-collection' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Types of information we collect:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Types of information we collect:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Account information (name, email address)</li>
                       <li>• Generated content (prompts, coloring pages)</li>
                       <li>• Usage data (how you interact with our service)</li>
@@ -140,8 +140,8 @@ export const PrivacyPage = () => {
                 
                 {section.id === 'how-we-use' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">We use your information to:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">We use your information to:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Provide and improve our AI coloring book generation service</li>
                       <li>• Process your requests and save your generated content</li>
                       <li>• Send you important updates about our service</li>
@@ -153,8 +153,8 @@ export const PrivacyPage = () => {
                 
                 {section.id === 'data-security' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Security measures include:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Security measures include:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Encryption of data in transit and at rest</li>
                       <li>• Regular security audits and vulnerability assessments</li>
                       <li>• Access controls and authentication requirements</li>
@@ -166,8 +166,8 @@ export const PrivacyPage = () => {
                 
                 {section.id === 'your-rights' && (
                   <div className="mt-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Your rights include:</h3>
-                    <ul className="space-y-2 text-gray-600">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Your rights include:</h3>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                       <li>• Access to your personal information</li>
                       <li>• Correction of inaccurate information</li>
                       <li>• Deletion of your account and associated data</li>
@@ -182,12 +182,12 @@ export const PrivacyPage = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="mt-8 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
-          <p className="text-gray-600 mb-4">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Us</h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
             If you have any questions about this Privacy Policy or our privacy practices, please contact us:
           </p>
-          <div className="space-y-2 text-gray-600">
+          <div className="space-y-2 text-gray-600 dark:text-gray-300">
             <p>Email: privacy@colorcraft.ai</p>
             <p>Address: 123 Innovation Drive, Tech Valley, CA 94105</p>
             <p>Phone: +1 (555) 123-4567</p>

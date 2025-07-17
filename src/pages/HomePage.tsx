@@ -70,18 +70,18 @@ export const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-coral-50 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-coral-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20viewBox=%220%200%2060%2060%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23f1f5f9%22%20fill-opacity=%220.3%22%3E%3Ccircle%20cx=%2230%22%20cy=%2230%22%20r=%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-coral-200 rounded-full px-4 py-2 text-sm font-medium text-coral-700 shadow-sm">
+              <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-coral-200 dark:border-coral-700 rounded-full px-4 py-2 text-sm font-medium text-coral-700 dark:text-coral-300 shadow-sm">
                 <Sparkles className="w-4 h-4" />
                 <span>AI-Powered Coloring Book Creation</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
                 Create Beautiful
                 <span className="block bg-gradient-to-r from-coral-500 to-purple-500 bg-clip-text text-transparent">
                   Coloring Books
@@ -89,7 +89,7 @@ export const HomePage = () => {
                 <span className="block">in Seconds</span>
               </h1>
               
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                 Transform your ideas into professional-quality coloring book illustrations with our AI-powered platform. Perfect for parents, educators, and creative professionals.
               </p>
             </div>
@@ -108,13 +108,13 @@ export const HomePage = () => {
               
               <SmartLink
                 to="/templates"
-                className="px-8 py-4 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 rounded-xl font-semibold text-lg hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded-xl font-semibold text-lg hover:bg-white dark:hover:bg-gray-800 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
               >
                 Browse Templates
               </SmartLink>
             </div>
 
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
+            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
                 <div className="flex -space-x-2">
                   <div className="w-8 h-8 bg-coral-500 rounded-full border-2 border-white"></div>
@@ -137,13 +137,13 @@ export const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Why Choose ColorCraft AI?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Experience the future of coloring book creation with our advanced AI technology
             </p>
           </div>
@@ -152,7 +152,7 @@ export const HomePage = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:border-coral-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-coral-200 dark:hover:border-coral-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <div className="relative mb-6">
                   <div className="w-12 h-12 bg-gradient-to-br from-coral-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
@@ -160,8 +160,8 @@ export const HomePage = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-br from-coral-500 to-purple-500 rounded-xl blur opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -169,13 +169,13 @@ export const HomePage = () => {
       </section>
 
       {/* Templates Preview */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Popular Templates
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Get started quickly with our professionally designed template collections
             </p>
           </div>
@@ -184,7 +184,7 @@ export const HomePage = () => {
             {templates.map((template, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-coral-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-coral-200 dark:hover:border-coral-600 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 <div className="aspect-w-16 aspect-h-10 relative overflow-hidden">
                   <img
@@ -195,8 +195,8 @@ export const HomePage = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{template.title}</h3>
-                  <p className="text-gray-600 mb-4">{template.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{template.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{template.description}</p>
                   <button className="w-full py-2 px-4 bg-gradient-to-r from-coral-500 to-purple-500 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
                     Use Template
                   </button>
@@ -208,7 +208,7 @@ export const HomePage = () => {
           <div className="text-center mt-12">
             <SmartLink
               to="/templates"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-white border border-gray-200 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="inline-flex items-center space-x-2 px-8 py-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 rounded-xl font-semibold hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <span>View All Templates</span>
               <ArrowRight className="w-5 h-5" />
@@ -218,13 +218,13 @@ export const HomePage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
               Loved by Creators Worldwide
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               See what our community has to say about ColorCraft AI
             </p>
           </div>
@@ -233,21 +233,21 @@ export const HomePage = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.content}"</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-coral-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <p className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export const HomePage = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <SmartLink
                 to="/create"
-                className="group px-8 py-4 bg-white text-coral-600 rounded-xl font-semibold text-lg hover:bg-gray-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                className="group px-8 py-4 bg-white dark:bg-gray-800 text-coral-600 dark:text-coral-400 rounded-xl font-semibold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
               >
                 <span className="flex items-center space-x-2">
                   <span>Start Creating Now</span>
@@ -278,7 +278,7 @@ export const HomePage = () => {
               </SmartLink>
               <SmartLink
                 to="/templates"
-                className="px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/30 text-white rounded-xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 bg-white/20 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-600/30 text-white rounded-xl font-semibold text-lg hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300 transform hover:scale-105"
               >
                 Browse Templates
               </SmartLink>

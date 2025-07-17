@@ -59,21 +59,21 @@ export const PromptPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-mint-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-mint-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-sm border border-mint-200 rounded-full px-4 py-2 text-sm font-medium text-mint-700 shadow-sm mb-4">
+          <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-mint-200 dark:border-mint-700 rounded-full px-4 py-2 text-sm font-medium text-mint-700 dark:text-mint-300 shadow-sm mb-4">
             <Sparkles className="w-4 h-4" />
             <span>AI Coloring Book Generator</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Create Your
             <span className="block bg-gradient-to-r from-mint-500 to-coral-500 bg-clip-text text-transparent">
               Perfect Coloring Page
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Describe what you want to create and our AI will generate a beautiful coloring book illustration
           </p>
         </div>
@@ -82,14 +82,14 @@ export const PromptPage = () => {
           {/* Main Form */}
           <div className="lg:col-span-2 space-y-8">
             {/* Prompt Input */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-to-br from-mint-500 to-coral-500 rounded-xl flex items-center justify-center">
                   <Wand2 className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">Describe Your Idea</h2>
-                  <p className="text-gray-600 text-sm">What would you like to create?</p>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Describe Your Idea</h2>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">What would you like to create?</p>
                 </div>
               </div>
 
@@ -99,10 +99,10 @@ export const PromptPage = () => {
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Describe your coloring page idea... (e.g., 'A friendly dragon sitting in a meadow with flowers')"
-                    className="w-full h-32 px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-mint-500 focus:border-mint-500 resize-none text-gray-900 placeholder-gray-500 transition-all duration-200"
+                    className="w-full h-32 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-mint-500 focus:border-mint-500 resize-none text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200"
                     maxLength={200}
                   />
-                  <div className="absolute bottom-3 right-3 text-xs text-gray-400">
+                  <div className="absolute bottom-3 right-3 text-xs text-gray-400 dark:text-gray-500">
                     {prompt.length}/200
                   </div>
                 </div>
@@ -112,7 +112,7 @@ export const PromptPage = () => {
                     <button
                       key={index}
                       onClick={() => setPrompt(example)}
-                      className="px-3 py-1 bg-mint-50 text-mint-700 rounded-full text-sm hover:bg-mint-100 transition-colors duration-200"
+                      className="px-3 py-1 bg-mint-50 dark:bg-mint-900/20 text-mint-700 dark:text-mint-300 rounded-full text-sm hover:bg-mint-100 dark:hover:bg-mint-900/30 transition-colors duration-200"
                     >
                       {example}
                     </button>
@@ -122,21 +122,21 @@ export const PromptPage = () => {
             </div>
 
             {/* Style Options */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-coral-500 rounded-xl flex items-center justify-center">
                   <Palette className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">Style & Settings</h2>
-                  <p className="text-gray-600 text-sm">Customize your coloring page</p>
+                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Style & Settings</h2>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">Customize your coloring page</p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 {/* Style Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">Art Style</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Art Style</label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {styleOptions.map((option) => (
                       <button
@@ -144,12 +144,12 @@ export const PromptPage = () => {
                         onClick={() => setStyle(option.value)}
                         className={`p-4 rounded-xl border text-left transition-all duration-200 ${
                           style === option.value
-                            ? 'border-mint-500 bg-mint-50 text-mint-700'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-mint-500 bg-mint-50 dark:bg-mint-900/20 text-mint-700 dark:text-mint-300'
+                            : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
-                        <div className="font-medium">{option.label}</div>
-                        <div className="text-sm text-gray-500 mt-1">{option.description}</div>
+                        <div className="font-medium text-gray-900 dark:text-white">{option.label}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{option.description}</div>
                       </button>
                     ))}
                   </div>
@@ -157,7 +157,7 @@ export const PromptPage = () => {
 
                 {/* Complexity Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">Complexity Level</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Complexity Level</label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {complexityOptions.map((option) => (
                       <button
@@ -165,12 +165,12 @@ export const PromptPage = () => {
                         onClick={() => setComplexity(option.value)}
                         className={`p-4 rounded-xl border text-left transition-all duration-200 ${
                           complexity === option.value
-                            ? 'border-coral-500 bg-coral-50 text-coral-700'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-coral-500 bg-coral-50 dark:bg-coral-900/20 text-coral-700 dark:text-coral-300'
+                            : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
-                        <div className="font-medium">{option.label}</div>
-                        <div className="text-sm text-gray-500 mt-1">{option.description}</div>
+                        <div className="font-medium text-gray-900 dark:text-white">{option.label}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{option.description}</div>
                       </button>
                     ))}
                   </div>
@@ -178,7 +178,7 @@ export const PromptPage = () => {
 
                 {/* Theme Selection */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">Theme (Optional)</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Theme (Optional)</label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {themeOptions.map((option) => (
                       <button
@@ -186,12 +186,12 @@ export const PromptPage = () => {
                         onClick={() => setTheme(option.value)}
                         className={`p-4 rounded-xl border text-left transition-all duration-200 ${
                           theme === option.value
-                            ? 'border-purple-500 bg-purple-50 text-purple-700'
-                            : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            ? 'border-purple-500 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300'
+                            : 'border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
-                        <div className="font-medium">{option.label}</div>
-                        <div className="text-sm text-gray-500 mt-1">{option.description}</div>
+                        <div className="font-medium text-gray-900 dark:text-white">{option.label}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{option.description}</div>
                       </button>
                     ))}
                   </div>
@@ -200,13 +200,13 @@ export const PromptPage = () => {
             </div>
 
             {/* Generate Button */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-sm">
               <button
                 onClick={handleGenerate}
                 disabled={!prompt.trim() || isGenerating}
                 className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-300 ${
                   !prompt.trim() || isGenerating
-                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
                     : 'bg-gradient-to-r from-mint-500 to-coral-500 text-white hover:shadow-xl hover:shadow-mint-500/25 transform hover:scale-105'
                 }`}
               >
@@ -228,12 +228,12 @@ export const PromptPage = () => {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Tips */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
               <div className="flex items-center space-x-2 mb-4">
                 <HelpCircle className="w-5 h-5 text-mint-500" />
-                <h3 className="font-semibold text-gray-900">Tips for Better Results</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Tips for Better Results</h3>
               </div>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                 <li className="flex items-start space-x-2">
                   <span className="text-mint-500 mt-1">•</span>
                   <span>Be specific about what you want to see</span>
@@ -254,22 +254,22 @@ export const PromptPage = () => {
             </div>
 
             {/* Settings */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
               <div className="flex items-center space-x-2 mb-4">
                 <Settings className="w-5 h-5 text-coral-500" />
-                <h3 className="font-semibold text-gray-900">Quick Settings</h3>
+                <h3 className="font-semibold text-gray-900 dark:text-white">Quick Settings</h3>
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">High Resolution</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">High Resolution</span>
                   <input type="checkbox" className="w-4 h-4 text-mint-500" defaultChecked />
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Thick Lines</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">Thick Lines</span>
                   <input type="checkbox" className="w-4 h-4 text-mint-500" defaultChecked />
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Print Ready</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">Print Ready</span>
                   <input type="checkbox" className="w-4 h-4 text-mint-500" defaultChecked />
                 </div>
               </div>
